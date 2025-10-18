@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Calculator</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet"/>
     <!-- Stylesheet -->
-    <link href="1style.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
     <div class="calculator">
+      <div class="theme-switcher-container">
+          <label class="switch">
+              <input type="checkbox" id="theme-switcher">
+              <span class="slider round"></span>
+          </label>
+      </div>
       <div class="display">
-        <input disabled="" id="input" placeholder="" type="text"/>
+        <input id="input" placeholder="0" type="text" disabled/>
       </div>
       <div class="buttons">
         <!-- Full Erase -->
