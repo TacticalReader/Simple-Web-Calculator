@@ -94,19 +94,30 @@ const eraseLast = () => {
   updateDisplay();
 };
 
-const toggleSign = () => {
-    if (currentInput.startsWith('-')) {
-        currentInput = currentInput.substring(1);
-    } else {
-        currentInput = '-' + currentInput;
-    }
-};
-
 const calculatePercent = () => {
     if (currentInput === "") return;
     try {
         const result = new Function(`return ${currentInput}`)() / 100;
         currentInput = String(parseFloat(result.toPrecision(15)));
+        calculationPerformed = true;
+    } catch (err) {
+        currentInput = "Error";
+        calculationPerformed = true;
+    }
+    updateDisplay();
+};
+
+const calculateSquareRoot = () => {
+    if (currentInput === "" || currentInput === "Error") return;
+    try {
+        // First, evaluate the expression in the display
+        const value = new Function(`return ${currentInput}`)();
+        if (value < 0) {
+            currentInput = "Error"; // Can't take sqrt of a negative number
+        } else {
+            const result = Math.sqrt(value);
+            currentInput = String(parseFloat(result.toPrecision(15)));
+        }
         calculationPerformed = true;
     } catch (err) {
         currentInput = "Error";
@@ -142,8 +153,8 @@ buttons.addEventListener("click", (e) => {
       case "erase":
         eraseLast();
         break;
-      case "sign":
-        toggleSign();
+      case "sqrt":
+        calculateSquareRoot();
         break;
       case "percent":
         calculatePercent();
@@ -151,7 +162,7 @@ buttons.addEventListener("click", (e) => {
     }
   }
   
-  if (target.id !== 'equal' && currentInput !== "Error") {
+  if (target.id !== 'equal' && target.id !== 'percent' && target.id !== 'sqrt' && currentInput !== "Error") {
       updateDisplay();
   }
 });
