@@ -92,6 +92,25 @@ body {
   bottom: 4px;
   background-color: var(--theme-switcher-slider);
   transition: .4s;
+  z-index: 2;
+}
+
+.slider .fa-moon,
+.slider .fa-sun {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #f1c40f;
+    z-index: 1;
+}
+
+.slider .fa-moon {
+    left: 5px;
+}
+
+.slider .fa-sun {
+    right: 5px;
 }
 
 input:checked + .slider {
@@ -135,7 +154,7 @@ input:checked + .slider:before {
   margin-top: 40px;
 }
 
-.buttons input[type="button"] {
+.buttons button {
   font-size: 20px;
   padding: 17px;
   border: none;
@@ -146,16 +165,16 @@ input:checked + .slider:before {
   transition: box-shadow 0.2s ease;
 }
 
-.buttons input[type="button"]:hover {
+.buttons button:hover {
   box-shadow: var(--button-hover-shadow);
 }
 
-input[type="button"]#equal {
+button#equal {
   grid-row: span 2;
   background-color: var(--equal-button-bg);
   color: #ffffff;
 }
 
-input[type="button"][value="0"] {
+button[data-value="0"] {
   grid-column: span 2;
 }
