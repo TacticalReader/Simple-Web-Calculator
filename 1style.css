@@ -7,6 +7,7 @@
   --button-text-color: #ffffff;
   --button-hover-shadow: 0 8px 25px #82899a;
   --equal-button-bg: #f9544c;
+  --operator-button-color: #f9544c;
   --button-bg: transparent;
   --theme-switcher-bg: #333;
   --theme-switcher-slider: #fff;
@@ -21,6 +22,7 @@
   --button-text-color: #22252d;
   --button-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   --equal-button-bg: #f9544c;
+  --operator-button-color: #f9544c;
   --button-bg: #f7f7f7;
   --theme-switcher-bg: #ccc;
   --theme-switcher-slider: #fff;
@@ -37,17 +39,15 @@ body {
   height: 100vh;
   background: linear-gradient(to bottom, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   transition: background 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculator {
   width: 356px;
-  height: 640px;
   background-color: var(--calculator-bg);
   padding: 20px 30px 30px 30px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
   border-radius: 8px;
   box-shadow: 0 20px 50px rgba(173, 190, 255, 0.4);
   transition: background-color 0.3s ease;
@@ -141,6 +141,7 @@ input:checked + .slider:before {
   background-color: transparent;
   color: var(--display-text-color);
   font-size: 35px;
+  outline: none;
 }
 
 .display input::placeholder {
@@ -169,12 +170,15 @@ input:checked + .slider:before {
   box-shadow: var(--button-hover-shadow);
 }
 
+.buttons button .fas {
+  font-size: 18px;
+}
+
 button#equal {
-  grid-row: span 2;
   background-color: var(--equal-button-bg);
   color: #ffffff;
 }
 
-button[data-value="0"] {
-  grid-column: span 2;
+.operator {
+    color: var(--operator-button-color);
 }
