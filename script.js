@@ -44,7 +44,7 @@ button_input.forEach((button) => {
       input.value = "";
       equal_pressed = 0;
     }
-    input.value += button.value;
+    input.value += button.dataset.value;
   });
 });
 
