@@ -23,29 +23,34 @@
           </label>
       </div>
       <div class="display">
-        <input id="input" placeholder="0" type="text" disabled/>
+        <input id="input" placeholder="0" type="text" readonly/>
       </div>
       <div class="buttons">
-        <!-- Full Erase -->
+        <!-- Row 1 -->
         <button id="clear">AC</button>
-        <!-- Erase Single Value -->
-        <button id="erase"><i class="fas fa-backspace"></i></button>
-        <button class="input-button" data-value="/">/</button>
-        <button class="input-button" data-value="*">*</button>
+        <button id="sign">+/-</button>
+        <button id="percent">%</button>
+        <button class="input-button operator" data-value="/"><i class="fas fa-divide"></i></button>
+        <!-- Row 2 -->
         <button class="input-button" data-value="7">7</button>
         <button class="input-button" data-value="8">8</button>
         <button class="input-button" data-value="9">9</button>
-        <button class="input-button" data-value="-">-</button>
-        <button class="input-button" data-value="6">6</button>
-        <button class="input-button" data-value="5">5</button>
+        <button class="input-button operator" data-value="*"><i class="fas fa-times"></i></button>
+        <!-- Row 3 -->
         <button class="input-button" data-value="4">4</button>
-        <button class="input-button" data-value="+">+</button>
+        <button class="input-button" data-value="5">5</button>
+        <button class="input-button" data-value="6">6</button>
+        <button class="input-button operator" data-value="-">-</button>
+        <!-- Row 4 -->
         <button class="input-button" data-value="1">1</button>
         <button class="input-button" data-value="2">2</button>
         <button class="input-button" data-value="3">3</button>
-        <button id="equal">=</button>
+        <button class="input-button operator" data-value="+">+</button>
+        <!-- Row 5 -->
         <button class="input-button" data-value="0">0</button>
         <button class="input-button" data-value=".">.</button>
+        <button id="erase"><i class="fas fa-backspace"></i></button>
+        <button id="equal">=</button>
       </div>
     </div>
     <!-- Script -->
