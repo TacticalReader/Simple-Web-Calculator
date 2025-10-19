@@ -6,6 +6,8 @@
     <title>Calculator</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <!-- Stylesheet -->
     <link href="1style.css" rel="stylesheet"/>
 </head>
@@ -14,7 +16,10 @@
       <div class="theme-switcher-container">
           <label class="switch">
               <input type="checkbox" id="theme-switcher">
-              <span class="slider round"></span>
+              <span class="slider round">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </span>
           </label>
       </div>
       <div class="display">
@@ -22,25 +27,25 @@
       </div>
       <div class="buttons">
         <!-- Full Erase -->
-        <input id="clear" type="button" value="AC"/>
+        <button id="clear">AC</button>
         <!-- Erase Single Value -->
-        <input id="erase" type="button" value="DEL"/>
-        <input class="input-button" type="button" value="/"/>
-        <input class="input-button" type="button" value="*"/>
-        <input class="input-button" type="button" value="7"/>
-        <input class="input-button" type="button" value="8"/>
-        <input class="input-button" type="button" value="9"/>
-        <input class="input-button" type="button" value="-"/>
-        <input class="input-button" type="button" value="6"/>
-        <input class="input-button" type="button" value="5"/>
-        <input class="input-button" type="button" value="4"/>
-        <input class="input-button" type="button" value="+"/>
-        <input class="input-button" type="button" value="1"/>
-        <input class="input-button" type="button" value="2"/>
-        <input class="input-button" type="button" value="3"/>
-        <input id="equal" type="button" value="="/>
-        <input class="input-button" type="button" value="0"/>
-        <input class="input-button" type="button" value="."/>
+        <button id="erase"><i class="fas fa-backspace"></i></button>
+        <button class="input-button" data-value="/">/</button>
+        <button class="input-button" data-value="*">*</button>
+        <button class="input-button" data-value="7">7</button>
+        <button class="input-button" data-value="8">8</button>
+        <button class="input-button" data-value="9">9</button>
+        <button class="input-button" data-value="-">-</button>
+        <button class="input-button" data-value="6">6</button>
+        <button class="input-button" data-value="5">5</button>
+        <button class="input-button" data-value="4">4</button>
+        <button class="input-button" data-value="+">+</button>
+        <button class="input-button" data-value="1">1</button>
+        <button class="input-button" data-value="2">2</button>
+        <button class="input-button" data-value="3">3</button>
+        <button id="equal">=</button>
+        <button class="input-button" data-value="0">0</button>
+        <button class="input-button" data-value=".">.</button>
       </div>
     </div>
     <!-- Script -->
